@@ -88,7 +88,7 @@ namespace RabbitMQManager.Infrastructure.Commands
             foreach (var item in RequiredArguments)
             {
                 sb.AppendFormat("\t\t[{0}{1} '{2}']", ArgumentPrefix, item.Name, item.Value ?? "");
-                if (!String.IsNullOrEmpty(item.Description))
+                if (!string.IsNullOrEmpty(item.Description))
                 {
                     sb.AppendFormat("({0})", item.Description);
                 }
@@ -102,7 +102,7 @@ namespace RabbitMQManager.Infrastructure.Commands
 
             foreach (var item in OptionalArguments)
             {
-                if (item.SingleType)
+                if (item.IsFlag)
                 {
                     sb.AppendFormat("\t\t[{0}{1}]", ArgumentPrefix, item.Name);
                 }
@@ -111,7 +111,7 @@ namespace RabbitMQManager.Infrastructure.Commands
                     sb.AppendFormat("\t\t[{0}{1} '{2}']", ArgumentPrefix, item.Name, item.Value ?? "");
                 }
 
-                if (!String.IsNullOrEmpty(item.Description))
+                if (!string.IsNullOrEmpty(item.Description))
                 {
                     sb.AppendFormat("({0})", item.Description);
                 }

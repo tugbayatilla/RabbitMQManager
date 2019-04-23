@@ -13,7 +13,10 @@ namespace RabbitMQManager.Infrastructure.Commands
             return Value as string;
         }
 
-        public bool GetValueAsBooleanIfExist() => Value != null ? Convert.ToBoolean(Value) : false;
+        public bool GetValueAsBooleanIfExist()
+        {
+            return Value != null && Convert.ToBoolean(Value);
+        }
 
         public int GetValueAsInt32IfExist()
         {
@@ -34,7 +37,7 @@ namespace RabbitMQManager.Infrastructure.Commands
 
     public class OptionalCommandArgument : CommandArgument
     {
-        public bool SingleType { get; set; }
+        public bool IsFlag { get; set; }
     }
 
     public class RequiredCommandArgument : CommandArgument

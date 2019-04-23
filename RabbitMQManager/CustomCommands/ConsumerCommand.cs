@@ -24,8 +24,8 @@ namespace RabbitMQManager.CustomCommands
             this.OptionalArguments.Add(new OptionalCommandArgument() { Name = nameof(Exchange), Value = null, Description = "name of the exchange" });
             this.OptionalArguments.Add(new OptionalCommandArgument() { Name = nameof(RoutingKey), Value = null, Description = "the routing key" });
             this.OptionalArguments.Add(new OptionalCommandArgument() { Name = nameof(DeadLetterExchange), Value = null, Description = "deadletter exchange name" });
-            this.OptionalArguments.Add(new OptionalCommandArgument() { Name = nameof(ShowHeaders), SingleType = true, Description = "if you are consuming deadletter, it is a good to use this property" });
-            this.OptionalArguments.Add(new OptionalCommandArgument() { Name = nameof(NoAutoAck), SingleType = true, Description = "flag for autoack set to false in queue" });
+            this.OptionalArguments.Add(new OptionalCommandArgument() { Name = nameof(ShowHeaders), IsFlag = true, Description = "if you are consuming deadletter, it is a good to use this property" });
+            this.OptionalArguments.Add(new OptionalCommandArgument() { Name = nameof(NoAutoAck), IsFlag = true, Description = "flag for autoack set to false in queue" });
         }
 
         public override string Name => "consumer";

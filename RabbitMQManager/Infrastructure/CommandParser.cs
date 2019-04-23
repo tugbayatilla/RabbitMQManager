@@ -94,7 +94,7 @@ namespace RabbitMQManager.Infrastructure
                 }
 
                 //dont need value
-                if (optionalArgument.SingleType)
+                if (optionalArgument.IsFlag)
                 {
                     continue;
                 }

@@ -11,7 +11,7 @@ namespace RabbitMQManager.Infrastructure.Commands
     {
         public HelpCommand() 
         {
-            OptionalArguments.Add(new OptionalCommandArgument() { Name = "all", SingleType = true });
+            OptionalArguments.Add(new OptionalCommandArgument() { Name = "all", IsFlag = true });
             OptionalArguments.Add(new OptionalCommandArgument() { Name = "cmd" });
         }
 
